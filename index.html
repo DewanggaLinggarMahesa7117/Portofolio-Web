@@ -9,7 +9,7 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrapper">
-      <a href="#top" class="brand">Dewangga L. Mahesa</a>
+      <a href="#top" class="brand">Dewangga<span>.</span></a>
       <nav aria-label="Primary navigation">
         <ul class="nav-list">
           <li><a href="#about">About</a></li>
@@ -19,94 +19,136 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode" title="Switch Theme">
+        🌙
+      </button>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="container hero-content">
-        <p class="eyebrow">Mathematics Undergraduate · FMIPA UNS · Surakarta</p>
-        <h1>Mathematical modeling, data analytics, and software-driven problem solving.</h1>
-        <p class="hero-desc">
-          I am a Mathematics student at Universitas Sebelas Maret (UNS) focused on operations research,
-          predictive modeling, and translating quantitative analysis into practical software solutions.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">Explore Projects</a>
-          <a href="#achievements" class="btn btn-secondary">Achievements &amp; Roles</a>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="badge">✨ Mathematics Undergraduate · FMIPA UNS</span>
+          <h1>
+            Mathematical modeling, <span class="gradient-text">data analytics</span>, and software-driven problem solving.
+          </h1>
+          <p class="hero-desc">
+            I am <strong>Dewangga Linggar Mahesa</strong>, a Mathematics student at Universitas Sebelas Maret (UNS) focused on operations research,
+            predictive modeling, and translating quantitative analysis into practical software solutions.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">Explore Projects 🚀</a>
+            <a href="#achievements" class="btn btn-secondary">Achievements &amp; Roles</a>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <div class="profile-frame">
+            <img src="assets/profile.jpg" alt="Dewangga Linggar Mahesa" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="profile-fallback" style="display: none;">DLM</div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="about" class="section">
       <div class="container">
-        <h2>About Me</h2>
-        <p class="section-lead">
-          Currently pursuing a Bachelor's degree in Mathematics at FMIPA Universitas Sebelas Maret,
-          with strong interests in mathematical modeling, machine learning, and optimization.
-          Beyond coursework and competitions, I actively contribute as a faculty ambassador, event host/moderator,
-          and mathematics tutor.
-        </p>
+        <div class="about-card">
+          <h2>About Me</h2>
+          <p class="section-lead">
+            Currently pursuing a Bachelor's degree in Mathematics at FMIPA Universitas Sebelas Maret,
+            with strong interests in mathematical modeling, machine learning, and optimization.
+            Beyond coursework and competitions, I actively contribute as a faculty ambassador (Duta FMIPA UNS 2026),
+            event host/moderator, and mathematics tutor.
+          </p>
+        </div>
       </div>
     </section>
 
     <section id="projects" class="section section-alt">
       <div class="container">
-        <h2>Featured Projects</h2>
-        <p class="section-lead">
-          Selected works in AI optimization, fraud detection, and emergency operations modeling.
-        </p>
+        <div class="section-header-flex">
+          <div>
+            <h2>Featured Projects</h2>
+            <p class="section-lead">
+              Selected works in AI optimization, fraud detection, and emergency operations modeling.
+            </p>
+          </div>
+          
+          <!-- Interactive Filter Buttons -->
+          <div class="filter-group" role="group" aria-label="Project categories">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ai">AI &amp; ML</button>
+            <button class="filter-btn" data-filter="or">Operations Research</button>
+          </div>
+        </div>
 
         <div class="grid-3">
-          <article class="card project-card">
+          <article class="card project-card" data-category="ai">
             <div>
-              <span class="tag">AI &amp; Optimization</span>
-              <h3>MAECO: Smart Batik Production Optimizer</h3>
-              <p>
-                <strong>Problem:</strong> Traditional batik workshops face unoptimized production schedules and high risks of electrical load spikes (MCB overload).
-              </p>
-              <p>
-                <strong>Approach &amp; Outcome:</strong> Developed an AI-powered production scheduling platform designed to optimize energy efficiency and balance workshop power consumption.
-              </p>
+              <div class="card-img-wrap gradient-1">
+                <img src="assets/maeco.jpg" alt="MAECO Preview" onerror="this.style.display='none'" />
+              </div>
+              <div class="card-body">
+                <span class="tag tag-blue">AI &amp; Optimization</span>
+                <h3>MAECO: Smart Batik Production Optimizer</h3>
+                <p>
+                  <strong>Problem:</strong> Traditional batik workshops face unoptimized production schedules and high risks of electrical load spikes (MCB overload).
+                </p>
+                <p>
+                  <strong>Approach &amp; Outcome:</strong> Developed an AI-powered production scheduling platform designed to optimize energy efficiency and balance workshop power consumption.
+                </p>
+              </div>
             </div>
             <div class="card-footer">
-              <a href="https://drive.google.com/PASTE_LINK_MAECO_HERE" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              <a href="https://drive.google.com/drive/folders/11mNXHvuDAuejA4uHrmU0fkW5--7__tCf?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm btn-block">
                 View Project Files (Drive) &rarr;
               </a>
             </div>
           </article>
 
-          <article class="card project-card">
+          <article class="card project-card" data-category="ai">
             <div>
-              <span class="tag">Machine Learning · FinTech</span>
-              <h3>Fraud Analysis on Digital Lending Platforms</h3>
-              <p>
-                <strong>Problem:</strong> Identifying fraudulent loan applications accurately within imbalanced digital lending datasets.
-              </p>
-              <p>
-                <strong>Approach &amp; Outcome:</strong> Built and benchmarked classification models using <strong>Random Forest</strong>, <strong>Logistic Regression</strong>, and <strong>XGBoost</strong> to evaluate fraud detection performance.
-              </p>
+              <div class="card-img-wrap gradient-2">
+                <img src="assets/fraud.jpg" alt="Fraud Analysis Preview" onerror="this.style.display='none'" />
+              </div>
+              <div class="card-body">
+                <span class="tag tag-purple">Machine Learning · FinTech</span>
+                <h3>Fraud Analysis on Digital Lending Platforms</h3>
+                <p>
+                  <strong>Problem:</strong> Identifying fraudulent loan applications accurately within imbalanced digital lending datasets.
+                </p>
+                <p>
+                  <strong>Approach &amp; Outcome:</strong> Built and benchmarked classification models using <strong>Random Forest</strong>, <strong>Logistic Regression</strong>, and <strong>XGBoost</strong> to evaluate fraud detection performance.
+                </p>
+              </div>
             </div>
             <div class="card-footer">
-              <a href="https://drive.google.com/PASTE_LINK_FRAUD_HERE" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              <a href="https://drive.google.com/drive/folders/1nC7HkwzkAu-BTCvTntY8TSc1UfKPY-nA?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm btn-block">
                 View Project Files (Drive) &rarr;
               </a>
             </div>
           </article>
 
-          <article class="card project-card">
+          <article class="card project-card" data-category="or">
             <div>
-              <span class="tag">Operations Research · Modeling</span>
-              <h3>Auxiliary Fire Station Placement &amp; Emergency Vehicle Routing in Densely Populated Hilly Settlements</h3>
-              <p>
-                <strong>Problem:</strong> Steep terrain and narrow road networks in dense hilly settlements slow down emergency fire response times.
-              </p>
-              <p>
-                <strong>Approach &amp; Outcome:</strong> Formulated a mathematical location-routing model to determine optimal auxiliary fire station placement and emergency vehicle paths.
-              </p>
+              <div class="card-img-wrap gradient-3">
+                <img src="assets/fire-station.jpg" alt="Emergency Routing Preview" onerror="this.style.display='none'" />
+              </div>
+              <div class="card-body">
+                <span class="tag tag-teal">Operations Research · Modeling</span>
+                <h3>Auxiliary Fire Station Placement &amp; Emergency Vehicle Routing in Densely Populated Hilly Settlements</h3>
+                <p>
+                  <strong>Problem:</strong> Steep terrain and narrow road networks in dense hilly settlements slow down emergency fire response times.
+                </p>
+                <p>
+                  <strong>Approach &amp; Outcome:</strong> Formulated a mathematical location-routing model to determine optimal auxiliary fire station placement and emergency vehicle paths.
+                </p>
+              </div>
             </div>
             <div class="card-footer">
-              <a href="https://drive.google.com/PASTE_LINK_FIRE_STATION_HERE" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              <a href="https://drive.google.com/drive/folders/1MrZRweLtiLmmtF3ktqOswS7ktOcKFXjp?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm btn-block">
                 View Project Files (Drive) &rarr;
               </a>
             </div>
@@ -119,20 +161,20 @@
       <div class="container">
         <h2>Honors, Competitions &amp; Experience</h2>
         <div class="grid-2">
-          <div class="info-box">
-            <h3>Competitions &amp; Honors</h3>
+          <div class="info-box accent-border-blue">
+            <h3>🏆 Competitions &amp; Honors</h3>
             <ul class="clean-list">
               <li><strong>Duta FMIPA UNS 2026</strong> — Faculty Ambassador, FMIPA Universitas Sebelas Maret</li>
               <li><strong>2nd Place, ONMIPA UNS 2026 (Mathematics)</strong> — University-Level National Mathematics &amp; Natural Sciences Olympiad</li>
               <li><strong>Finalist, UNS Innovation Hackathon 2026</strong> — Awarded IDR 4.5 Million in Development Funding</li>
               <li><strong>Finalist, AdaKamis x UNS Paper Competition</strong></li>
-              <li><strong>Finalist, IMC IPB (Operations Research)</strong> — International Mathematics Competition / Modeling</li>
+              <li><strong>Finalist, IMC IPB (Operations Research)</strong> — IPB Mathematics Competition / Modeling</li>
               <li><strong>1st Place, OSN &amp; KSM Mathematics (Regency Level)</strong> — National Science Olympiad &amp; Madrasah Science Competition</li>
             </ul>
           </div>
 
-          <div class="info-box">
-            <h3>Teaching &amp; Public Speaking</h3>
+          <div class="info-box accent-border-purple">
+            <h3>🎙️ Teaching &amp; Public Speaking</h3>
             <ul class="clean-list">
               <li>
                 <strong>Mathematics Tutor (UTBK, TKA, &amp; High School)</strong> — Guiding students in quantitative reasoning, calculus, algebra, and competitive exam preparation.
@@ -150,30 +192,44 @@
       <div class="container">
         <h2>Core Skills &amp; Tools</h2>
         <div class="grid-3">
-          <div class="card">
-            <h3>Data &amp; Machine Learning</h3>
-            <p>Python (NumPy, Pandas, Scikit-Learn, XGBoost, Matplotlib), SQL, Data Preprocessing &amp; Predictive Modeling.</p>
+          <div class="card skill-card">
+            <div class="card-body">
+              <div class="skill-icon">📊</div>
+              <h3>Data &amp; Machine Learning</h3>
+              <p>Python (NumPy, Pandas, Scikit-Learn, XGBoost, Matplotlib), SQL, Data Preprocessing &amp; Predictive Modeling.</p>
+            </div>
           </div>
-          <div class="card">
-            <h3>Mathematics &amp; Research</h3>
-            <p>Operations Research, Mathematical Modeling, Numerical Analysis, Wolfram Mathematica, LaTeX.</p>
+          <div class="card skill-card">
+            <div class="card-body">
+              <div class="skill-icon">📐</div>
+              <h3>Mathematics &amp; Research</h3>
+              <p>Operations Research, Mathematical Modeling, Numerical Analysis, Wolfram Mathematica, LaTeX.</p>
+            </div>
           </div>
-          <div class="card">
-            <h3>Web &amp; Collaboration</h3>
-            <p>HTML, CSS, JavaScript, Git &amp; GitHub, Technical Writing, Public Speaking &amp; Moderation.</p>
+          <div class="card skill-card">
+            <div class="card-body">
+              <div class="skill-icon">💻</div>
+              <h3>Web &amp; Collaboration</h3>
+              <p>HTML, CSS, JavaScript, Git &amp; GitHub, Technical Writing, Public Speaking &amp; Moderation.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="contact" class="section">
-      <div class="container contact-box">
-        <h2>Get in Touch</h2>
-        <p>Open to research collaborations, data science/modeling projects, competitions, and speaking opportunities.</p>
-        <div class="contact-links">
-          <a href="https://github.com/USERNAME_KAMU" target="_blank" rel="noopener noreferrer" class="btn btn-primary">GitHub</a>
-          <a href="https://linkedin.com/in/USERNAME_KAMU" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn</a>
-          <a href="mailto:emailkamu@example.com" class="btn btn-secondary">Email</a>
+      <div class="container">
+        <div class="contact-banner">
+          <h2>Let's Connect &amp; Collaborate</h2>
+          <p>Open to research collaborations, data science/modeling projects, competitions, and speaking opportunities.</p>
+          <div class="contact-links">
+            <a href="https://github.com/DewanggaLinggarMahesa7117" target="_blank" rel="noopener noreferrer" class="btn btn-white">GitHub</a>
+            <a href="https://linkedin.com/in/dewanggalinggarmahesa" target="_blank" rel="noopener noreferrer" class="btn btn-white">LinkedIn</a>
+            <a href="mailto:dewanggaoffice@gmail.com" class="btn btn-white">Send Email</a>
+            <button id="copy-email-btn" class="btn btn-glass" data-email="dewanggaoffice@gmail.com">
+              📋 Copy Email
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -181,8 +237,10 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 Dewangga Linggar Mahesa. Built with HTML &amp; CSS.</p>
+      <p>&copy; 2026 Dewangga Linggar Mahesa. Crafted with HTML, CSS &amp; JavaScript.</p>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
